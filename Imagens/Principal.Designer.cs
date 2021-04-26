@@ -56,10 +56,28 @@
             this.espelhamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotacionar180ºToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.espelhamentoVerticalEHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rotação90GrausToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ampliaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reduçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btHistograma = new System.Windows.Forms.Button();
+            this.morfologiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.erosãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dilataçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aberturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fechamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grpMorfologia = new System.Windows.Forms.GroupBox();
+            this.lblFator = new System.Windows.Forms.Label();
+            this.btErosao = new System.Windows.Forms.Button();
+            this.btDilatacao = new System.Windows.Forms.Button();
+            this.btAbertura = new System.Windows.Forms.Button();
+            this.btFechamento = new System.Windows.Forms.Button();
+            this.txtFator = new System.Windows.Forms.NumericUpDown();
+            this.btReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlterada)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.grpMorfologia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFator)).BeginInit();
             this.SuspendLayout();
             // 
             // pbImagem
@@ -84,7 +102,6 @@
             // 
             this.txtMedia.Location = new System.Drawing.Point(122, 50);
             this.txtMedia.Name = "txtMedia";
-            this.txtMedia.ReadOnly = true;
             this.txtMedia.Size = new System.Drawing.Size(100, 20);
             this.txtMedia.TabIndex = 4;
             // 
@@ -92,7 +109,6 @@
             // 
             this.txtMediana.Location = new System.Drawing.Point(122, 77);
             this.txtMediana.Name = "txtMediana";
-            this.txtMediana.ReadOnly = true;
             this.txtMediana.Size = new System.Drawing.Size(100, 20);
             this.txtMediana.TabIndex = 6;
             // 
@@ -109,7 +125,6 @@
             // 
             this.txtModa.Location = new System.Drawing.Point(122, 103);
             this.txtModa.Name = "txtModa";
-            this.txtModa.ReadOnly = true;
             this.txtModa.Size = new System.Drawing.Size(100, 20);
             this.txtModa.TabIndex = 8;
             // 
@@ -126,7 +141,6 @@
             // 
             this.txtVariancia.Location = new System.Drawing.Point(122, 129);
             this.txtVariancia.Name = "txtVariancia";
-            this.txtVariancia.ReadOnly = true;
             this.txtVariancia.Size = new System.Drawing.Size(100, 20);
             this.txtVariancia.TabIndex = 10;
             // 
@@ -143,7 +157,6 @@
             // 
             this.txtMenor100.Location = new System.Drawing.Point(122, 155);
             this.txtMenor100.Name = "txtMenor100";
-            this.txtMenor100.ReadOnly = true;
             this.txtMenor100.Size = new System.Drawing.Size(100, 20);
             this.txtMenor100.TabIndex = 12;
             // 
@@ -160,7 +173,6 @@
             // 
             this.txtMaior150.Location = new System.Drawing.Point(122, 181);
             this.txtMaior150.Name = "txtMaior150";
-            this.txtMaior150.ReadOnly = true;
             this.txtMaior150.Size = new System.Drawing.Size(100, 20);
             this.txtMaior150.TabIndex = 14;
             // 
@@ -212,7 +224,8 @@
             // 
             this.toolEfeitos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estatisticaToolStripMenuItem,
-            this.transformaçõesToolStripMenuItem});
+            this.transformaçõesToolStripMenuItem,
+            this.morfologiaToolStripMenuItem});
             this.toolEfeitos.Enabled = false;
             this.toolEfeitos.Name = "toolEfeitos";
             this.toolEfeitos.Size = new System.Drawing.Size(54, 20);
@@ -227,41 +240,41 @@
             this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem,
             this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem});
             this.estatisticaToolStripMenuItem.Name = "estatisticaToolStripMenuItem";
-            this.estatisticaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.estatisticaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.estatisticaToolStripMenuItem.Text = "Estatistica";
             // 
             // aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem
             // 
             this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem.Name = "aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem";
-            this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem.Size = new System.Drawing.Size(491, 22);
+            this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem.Size = new System.Drawing.Size(492, 22);
             this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem.Text = "A) Valores maiores ou iguais a média recebem branco";
             this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem.Click += new System.EventHandler(this.aValoresMaioresOuIguaisAMédiaRecebemBrancoToolStripMenuItem_Click);
             // 
             // bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem
             // 
             this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem.Name = "bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem";
-            this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem.Size = new System.Drawing.Size(491, 22);
+            this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem.Size = new System.Drawing.Size(492, 22);
             this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem.Text = "B) Valores maiores ou iguais a moda recebem 200";
             this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem.Click += new System.EventHandler(this.bValoresMaioresOuIguaisAModaRecebem200ToolStripMenuItem_Click);
             // 
             // cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem
             // 
             this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem.Name = "cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem";
-            this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem.Size = new System.Drawing.Size(491, 22);
+            this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem.Size = new System.Drawing.Size(492, 22);
             this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem.Text = "C) Valores maiores ou iguais a mediana recebem 220";
             this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem.Click += new System.EventHandler(this.cValoresMaioresOuIguaisAMedianaRecebem220ToolStripMenuItem_Click);
             // 
             // dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem
             // 
             this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem.Name = "dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem";
-            this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem.Size = new System.Drawing.Size(491, 22);
+            this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem.Size = new System.Drawing.Size(492, 22);
             this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem.Text = "D) Valores menores que a média recebem 100";
             this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem.Click += new System.EventHandler(this.dValoresMenoresQueAMédiaRecebem100ToolStripMenuItem_Click);
             // 
             // eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem
             // 
             this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem.Name = "eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem";
-            this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem.Size = new System.Drawing.Size(491, 22);
+            this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem.Size = new System.Drawing.Size(492, 22);
             this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem.Text = "E) Valores maiores que a média recebem 0 e menores que a média recebem 255";
             this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem.Click += new System.EventHandler(this.eValoresMaioresQueAMédiaRecebem0EMenoresQueAMédiaRecebem255ToolStripMenuItem_Click);
             // 
@@ -270,31 +283,55 @@
             this.transformaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.espelhamentoToolStripMenuItem,
             this.rotacionar180ºToolStripMenuItem,
-            this.espelhamentoVerticalEHorizontalToolStripMenuItem});
+            this.espelhamentoVerticalEHorizontalToolStripMenuItem,
+            this.rotação90GrausToolStripMenuItem,
+            this.ampliaçãoToolStripMenuItem,
+            this.reduçãoToolStripMenuItem});
             this.transformaçõesToolStripMenuItem.Name = "transformaçõesToolStripMenuItem";
-            this.transformaçõesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.transformaçõesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.transformaçõesToolStripMenuItem.Text = "Transformações";
             // 
             // espelhamentoToolStripMenuItem
             // 
             this.espelhamentoToolStripMenuItem.Name = "espelhamentoToolStripMenuItem";
-            this.espelhamentoToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.espelhamentoToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.espelhamentoToolStripMenuItem.Text = "Espelhamento Vertical";
             this.espelhamentoToolStripMenuItem.Click += new System.EventHandler(this.espelhamentoToolStripMenuItem_Click);
             // 
             // rotacionar180ºToolStripMenuItem
             // 
             this.rotacionar180ºToolStripMenuItem.Name = "rotacionar180ºToolStripMenuItem";
-            this.rotacionar180ºToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.rotacionar180ºToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.rotacionar180ºToolStripMenuItem.Text = "Espelhamento Horizontal";
             this.rotacionar180ºToolStripMenuItem.Click += new System.EventHandler(this.rotacionar180ºToolStripMenuItem_Click);
             // 
             // espelhamentoVerticalEHorizontalToolStripMenuItem
             // 
             this.espelhamentoVerticalEHorizontalToolStripMenuItem.Name = "espelhamentoVerticalEHorizontalToolStripMenuItem";
-            this.espelhamentoVerticalEHorizontalToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.espelhamentoVerticalEHorizontalToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.espelhamentoVerticalEHorizontalToolStripMenuItem.Text = "Espelhamento Vertical e Horizontal";
             this.espelhamentoVerticalEHorizontalToolStripMenuItem.Click += new System.EventHandler(this.espelhamentoVerticalEHorizontalToolStripMenuItem_Click);
+            // 
+            // rotação90GrausToolStripMenuItem
+            // 
+            this.rotação90GrausToolStripMenuItem.Name = "rotação90GrausToolStripMenuItem";
+            this.rotação90GrausToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.rotação90GrausToolStripMenuItem.Text = "Rotação 90 Graus";
+            this.rotação90GrausToolStripMenuItem.Click += new System.EventHandler(this.rotação90GrausToolStripMenuItem_Click);
+            // 
+            // ampliaçãoToolStripMenuItem
+            // 
+            this.ampliaçãoToolStripMenuItem.Name = "ampliaçãoToolStripMenuItem";
+            this.ampliaçãoToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.ampliaçãoToolStripMenuItem.Text = "Ampliação";
+            this.ampliaçãoToolStripMenuItem.Click += new System.EventHandler(this.ampliaçãoToolStripMenuItem_Click);
+            // 
+            // reduçãoToolStripMenuItem
+            // 
+            this.reduçãoToolStripMenuItem.Name = "reduçãoToolStripMenuItem";
+            this.reduçãoToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.reduçãoToolStripMenuItem.Text = "Redução";
+            this.reduçãoToolStripMenuItem.Click += new System.EventHandler(this.reduçãoToolStripMenuItem_Click);
             // 
             // btHistograma
             // 
@@ -307,11 +344,139 @@
             this.btHistograma.UseVisualStyleBackColor = true;
             this.btHistograma.Click += new System.EventHandler(this.btHistograma_Click);
             // 
+            // morfologiaToolStripMenuItem
+            // 
+            this.morfologiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.erosãoToolStripMenuItem,
+            this.dilataçãoToolStripMenuItem,
+            this.aberturaToolStripMenuItem,
+            this.fechamentoToolStripMenuItem});
+            this.morfologiaToolStripMenuItem.Name = "morfologiaToolStripMenuItem";
+            this.morfologiaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.morfologiaToolStripMenuItem.Text = "Morfologia";
+            // 
+            // erosãoToolStripMenuItem
+            // 
+            this.erosãoToolStripMenuItem.Name = "erosãoToolStripMenuItem";
+            this.erosãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.erosãoToolStripMenuItem.Text = "Erosão";
+            this.erosãoToolStripMenuItem.Click += new System.EventHandler(this.erosãoToolStripMenuItem_Click);
+            // 
+            // dilataçãoToolStripMenuItem
+            // 
+            this.dilataçãoToolStripMenuItem.Name = "dilataçãoToolStripMenuItem";
+            this.dilataçãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dilataçãoToolStripMenuItem.Text = "Dilatação";
+            this.dilataçãoToolStripMenuItem.Click += new System.EventHandler(this.dilataçãoToolStripMenuItem_Click);
+            // 
+            // aberturaToolStripMenuItem
+            // 
+            this.aberturaToolStripMenuItem.Name = "aberturaToolStripMenuItem";
+            this.aberturaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aberturaToolStripMenuItem.Text = "Abertura";
+            this.aberturaToolStripMenuItem.Click += new System.EventHandler(this.aberturaToolStripMenuItem_Click);
+            // 
+            // fechamentoToolStripMenuItem
+            // 
+            this.fechamentoToolStripMenuItem.Name = "fechamentoToolStripMenuItem";
+            this.fechamentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fechamentoToolStripMenuItem.Text = "Fechamento";
+            this.fechamentoToolStripMenuItem.Click += new System.EventHandler(this.fechamentoToolStripMenuItem_Click);
+            // 
+            // grpMorfologia
+            // 
+            this.grpMorfologia.Controls.Add(this.btReset);
+            this.grpMorfologia.Controls.Add(this.txtFator);
+            this.grpMorfologia.Controls.Add(this.btFechamento);
+            this.grpMorfologia.Controls.Add(this.btAbertura);
+            this.grpMorfologia.Controls.Add(this.btDilatacao);
+            this.grpMorfologia.Controls.Add(this.btErosao);
+            this.grpMorfologia.Controls.Add(this.lblFator);
+            this.grpMorfologia.Enabled = false;
+            this.grpMorfologia.Location = new System.Drawing.Point(232, 348);
+            this.grpMorfologia.Name = "grpMorfologia";
+            this.grpMorfologia.Size = new System.Drawing.Size(245, 174);
+            this.grpMorfologia.TabIndex = 23;
+            this.grpMorfologia.TabStop = false;
+            this.grpMorfologia.Text = "Morfologia";
+            // 
+            // lblFator
+            // 
+            this.lblFator.AutoSize = true;
+            this.lblFator.Location = new System.Drawing.Point(102, 22);
+            this.lblFator.Name = "lblFator";
+            this.lblFator.Size = new System.Drawing.Size(31, 13);
+            this.lblFator.TabIndex = 1;
+            this.lblFator.Text = "Fator";
+            // 
+            // btErosao
+            // 
+            this.btErosao.Location = new System.Drawing.Point(6, 46);
+            this.btErosao.Name = "btErosao";
+            this.btErosao.Size = new System.Drawing.Size(232, 23);
+            this.btErosao.TabIndex = 2;
+            this.btErosao.Text = "Erosão";
+            this.btErosao.UseVisualStyleBackColor = true;
+            this.btErosao.Click += new System.EventHandler(this.btErosao_Click);
+            // 
+            // btDilatacao
+            // 
+            this.btDilatacao.Location = new System.Drawing.Point(6, 70);
+            this.btDilatacao.Name = "btDilatacao";
+            this.btDilatacao.Size = new System.Drawing.Size(232, 23);
+            this.btDilatacao.TabIndex = 3;
+            this.btDilatacao.Text = "Dilatação";
+            this.btDilatacao.UseVisualStyleBackColor = true;
+            this.btDilatacao.Click += new System.EventHandler(this.btDilatacao_Click);
+            // 
+            // btAbertura
+            // 
+            this.btAbertura.Location = new System.Drawing.Point(6, 94);
+            this.btAbertura.Name = "btAbertura";
+            this.btAbertura.Size = new System.Drawing.Size(232, 23);
+            this.btAbertura.TabIndex = 4;
+            this.btAbertura.Text = "Abertura";
+            this.btAbertura.UseVisualStyleBackColor = true;
+            this.btAbertura.Click += new System.EventHandler(this.btAbertura_Click);
+            // 
+            // btFechamento
+            // 
+            this.btFechamento.Location = new System.Drawing.Point(6, 117);
+            this.btFechamento.Name = "btFechamento";
+            this.btFechamento.Size = new System.Drawing.Size(232, 23);
+            this.btFechamento.TabIndex = 5;
+            this.btFechamento.Text = "Fechamento";
+            this.btFechamento.UseVisualStyleBackColor = true;
+            this.btFechamento.Click += new System.EventHandler(this.btFechamento_Click);
+            // 
+            // txtFator
+            // 
+            this.txtFator.Location = new System.Drawing.Point(139, 20);
+            this.txtFator.Name = "txtFator";
+            this.txtFator.Size = new System.Drawing.Size(98, 20);
+            this.txtFator.TabIndex = 6;
+            this.txtFator.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(6, 142);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(232, 23);
+            this.btReset.TabIndex = 7;
+            this.btReset.Text = "Reseta Imagem";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 534);
+            this.Controls.Add(this.grpMorfologia);
             this.Controls.Add(this.btHistograma);
             this.Controls.Add(this.pbAlterada);
             this.Controls.Add(this.txtMaior150);
@@ -335,6 +500,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAlterada)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grpMorfologia.ResumeLayout(false);
+            this.grpMorfologia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +539,22 @@
         private System.Windows.Forms.ToolStripMenuItem espelhamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rotacionar180ºToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem espelhamentoVerticalEHorizontalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rotação90GrausToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ampliaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reduçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem morfologiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem erosãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dilataçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aberturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fechamentoToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grpMorfologia;
+        private System.Windows.Forms.Button btFechamento;
+        private System.Windows.Forms.Button btAbertura;
+        private System.Windows.Forms.Button btDilatacao;
+        private System.Windows.Forms.Button btErosao;
+        private System.Windows.Forms.Label lblFator;
+        private System.Windows.Forms.NumericUpDown txtFator;
+        private System.Windows.Forms.Button btReset;
     }
 }
 
